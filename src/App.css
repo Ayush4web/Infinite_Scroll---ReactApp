@@ -1,38 +1,168 @@
-.App {
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 2.75rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+.title {
+  margin: 2rem auto;
   text-align: center;
+  color: brown;
+}
+.underline {
+  margin: 1rem auto;
+  height: 4px;
+  width: 10rem;
+  background-color: aqua;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form {
+  width: 50vw;
+  margin: 4rem auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-control {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.input,
+.btn {
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid gray;
+  padding: 0.75rem 1.2rem;
+  font-size: 1.5rem;
+  color: lightslategray;
+}
+.input {
+  width: 100%;
+  color: hsl(209, 34%, 30%);
+  text-transform: capitalize;
+}
+.input::placeholder {
+  color: lightgray;
+}
+.btn {
+  cursor: pointer;
+}
+.btn:hover {
+  color: rgb(85, 80, 80);
+}
+
+.container {
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));
+}
+.photo {
+  height: 17.5rem;
+  position: relative;
+    overflow: hidden;
+}
+
+.photo > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.photo h4 {
+  margin-bottom: 0.5rem;
+}
+.photo p {
+  margin-bottom: 0;
+}
+.user-img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+.photo-info {
+  position: absolute;
+  width: 100%;
+  padding: 1rem;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
   color: white;
+  transform: translateY(100%);
+  transition: all 0.3s linear;;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.photo:hover .photo-info {
+  transform: translateY(0);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loading{
+  text-align: center;
+  padding: 3rem;
+  color: brown;
 }
